@@ -1,0 +1,134 @@
+
+<!--    To run the app in chrome: 
+
+
+    Run testrpc on PowerShell
+   
+   
+    On run command:
+
+    chrome.exe --user-data-dir="C:/Chrome dev session" --disable-web-security     
+
+
+
+
+
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible"  content="ie=edge">
+    <meta name="description" content="Decentralized application storing vehicle data in a transparent, immutable blockchain ">
+    <meta name="keywords" content="blockchain, ethereum, trustcar, carpass, car , pass"  >
+    <meta name="author" content="Jeremy Joel Harisch, Kimberly Lange, Lionel">
+    <title>TrustCar | Welcome!</title>
+    <link reL="styleSheet" href ="./css/style.css">
+
+
+<script src="./node_modules/web3/dist/web3.min.js"></script>
+<script language="javascript" type="text/javascript" src="web3.min.js"></script>
+</head>
+
+
+
+
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1> <span class="highlight">Trust</span>Car </h1>
+
+            </div>
+            <nav>
+                <ul>
+                    <li class="current"><a href="index.html"> Home</a></li>
+                    <li ><a href="about.html"> About</a></li>
+                    <li ><a href="services.html"> Services</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+    <section id="showcase">
+        <div class="container">
+            <h1>
+                Decentralize your Car history now
+            </h1>
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec efficitur egestas diam, eget ullamcorper neque accumsan eu. Proin ultrices eleifend libero sit amet rutrum. Nullam ac facilisis leo, in facilisis augue. Nam ultrices malesuada est, in pretium turpis viverra id.   </p>
+        </div>
+    </section>
+    
+    <section id="newsletter">
+        <div class="container">
+            <h1>
+                
+            </h1>
+           
+        </div>
+    </section>
+
+    <section id="boxes">
+        <div class="container">
+            <div class="box">
+                <img src="./img/block.png">
+                <h3>
+                    Blockchain
+                </h3>
+                <p>
+                    The blockchain technologie  tech allows us to store digital information distributed, but not copied. Which means each individual piece of data can only have one owner and can not be changed by any hacker.</p>
+            </div>
+            <div class="box">
+                    <img src="./img/ether.jpg">
+                <h3>
+                    Ethereum
+                </h3>
+                <p>
+                        Ethereum is an open software platform based on blockchain technology that enables developers, like us, to build and deploy decentralized applications.  </p>
+            </div>
+            <div class="box">
+                    <img src="./img/metamask.png">
+                <h3>
+                    MetaMask
+                </h3>
+                <p>
+                        MetaMask is a bridge that allows us to visit the distributed web of tomorrow in your browser today. It allows you to run TrustCar right in your browser without running a full Ethereum node. 
+                    </p>
+            </div>
+        </div>
+
+
+    </section>
+
+    <footer>
+
+        <p>
+            TrustCar, Copyright &copy; 2018
+        </p>
+    </footer>
+    <script>
+    window.addEventListener('load', function() {
+
+        // Checking if Web3 has been injected by the browser (Mist/MetaMask)
+        if (typeof web3 !== 'undefined') {
+          // Use Mist/MetaMask's provider
+          web3js = new Web3(web3.currentProvider);
+        } else {
+          // Handle the case where the user doesn't have web3. Probably 
+          // show them a message telling them to install Metamask in 
+          // order to use our app.
+        }
+      
+        // Now you can start your app & access web3js freely:
+        startApp()
+      
+      })
+    </script>
+</body>
+</html>

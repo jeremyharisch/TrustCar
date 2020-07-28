@@ -1,0 +1,146 @@
+
+<!--    To run the app in chrome: 
+
+
+    Run testrpc on PowerShell
+   
+   
+    On run command:
+
+    chrome.exe --user-data-dir="C:/Chrome dev session" --disable-web-security     
+
+
+
+
+
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible"  content="ie=edge">
+    <meta name="description" content="Decentralized application storing vehicle data in a transparent, immutable blockchain ">
+    <meta name="keywords" content="blockchain, ethereum, trustcar, carpass, car , pass"  >
+    <meta name="author" content="Jeremy Joel Harisch, Kimberly Lange, Lionel">
+    <title>TrustCar | About</title>
+    <link reL="styleSheet" href ="./css/style.css">
+
+
+<script src="./node_modules/web3/dist/web3.min.js"></script>
+
+</head>
+
+
+
+
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1> <span class="highlight">Trust</span>Car </h1>
+
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html"> Home</a></li>
+                    <li class="current"><a href="about.html"> About</a></li>
+                    <li><a href="services.html"> Services</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+   
+    
+   
+
+    <section id="main">
+        <div class="container">
+           <article id="main-col">
+            <h1 class="page-title">TrustCar</h1>
+            <p>TrustCar is a web-based decentralized application which is only for managing the history of cars by motor
+                    mechanics and can be shown to the car’s owner. It is intended to be mainly used to record
+                    the repair history of a car on an immutable blockchain and to update the odometer after every
+                    inspection in order to lower the risk of fraud for people buying a used car. 
+                </p>
+
+                </p>
+                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.  </p>
+
+           </article>
+
+           
+
+
+        </div>
+
+
+    </section>
+
+    <section id="boxes">
+            <div class="container">
+                    <h1 class="page-title">The Team</h1>
+                <div class="box">
+                    <img src="./img/men.png">
+                    <h3>
+                        Jeremy Joel Harisch
+                    </h3>
+                    <p>
+                        3rd year Undergraduate student at Technical Unversity Munich</p>
+                </div>
+                <div class="box">
+                        <img src="./img/women.png">
+                    <h3>
+                        Kimberly Lange
+                    </h3>
+                    <p>
+                            3rd year Undergraduate student at Technical Unversity Berlin </p>
+                </div>
+                <div class="box">
+                        <img src="./img/men.png">
+                    <h3>
+                        Lionel
+                    </h3>
+                    <p>
+                            3rd year Undergraduate student at </p>
+                </div>
+            </div>
+    
+    
+        </section>
+
+    <footer>
+
+        <p>
+            TrustCar, Copyright &copy; 2018
+        </p>
+    </footer>
+
+    <script>
+            window.addEventListener('load', function() {
+        
+                // Checking if Web3 has been injected by the browser (Mist/MetaMask)
+                if (typeof web3 !== 'undefined') {
+                  // Use Mist/MetaMask's provider
+                  web3js = new Web3(web3.currentProvider);
+                } else {
+                  // Handle the case where the user doesn't have web3. Probably 
+                  // show them a message telling them to install Metamask in 
+                  // order to use our app.
+                }
+              
+                // Now you can start your app & access web3js freely:
+                startApp()
+              
+              })
+            </script>
+
+
+</body>
+</html>

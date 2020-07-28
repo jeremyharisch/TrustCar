@@ -1,0 +1,1050 @@
+
+<!--    To run the app in chrome: 
+
+
+    Run testrpc on PowerShell
+   
+   
+    On run command:
+
+    chrome.exe --user-data-dir="C:/Chrome dev session" --disable-web-security     
+
+
+
+
+
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible"  content="ie=edge">
+    <meta name="description" content="Decentralized application storing vehicle data in a transparent, immutable blockchain ">
+    <meta name="keywords" content="blockchain, ethereum, trustcar, carpass, car , pass"  >
+    <meta name="author" content="Jeremy Joel Harisch, Kimberly Lange, Lionel">
+    <title>TrustCar | Services </title>
+    <link reL="styleSheet" href ="./css/style.css">
+
+
+<script src="./node_modules/web3/dist/web3.min.js"></script>
+
+
+
+</head>
+
+
+
+
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1> <span class="highlight">Trust</span>Car </h1>
+
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html"> Home</a></li>
+                    <li ><a href="about.html"> About</a></li>
+                    <li class="current"></li><a href="services.html"> Services</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+   
+    
+   
+
+    <section id="main">
+        <div class="container">
+           <article id="main-col">
+            <h1 class="page-title">Services</h1>
+
+
+            <ul id="install_meta">
+                    <li>
+                            <h3> Warning!</h3>
+                            <p id="warning_01"> Please install MetaMask to use all functions of this web-based application. For more information visit <a href="https://metamask.io/">MetaMask</a>  </p>
+        
+                    </li>
+
+            </ul>
+            
+           
+            <ul id="services">
+                
+
+                <li>
+                    <h3>
+                        Car Owners
+                    </h3>
+                    <ul id="inner_services">
+                        <p>The following section is for Car owners.</p>
+
+                        <li>
+                            <button id="showOwnData" class="button_2" onclick="showCarData()">
+                                Show data of car
+                            </button>
+                            <input type="address" id="givenAddress05"class="address_1" placeholder="Enter address here...">
+
+                            <div id="car_data_form">
+                                <p></p>
+                                <form><span style="font-weight:bold">Model:</span> <span id="model_name"></span></form>
+                                <form><span style="font-weight:bold">License Plate:</span> <span id="license_plate"></span></form>
+                                <form><span style="font-weight:bold">Owner:</span> <span id="car_owner"></span></form>
+                                <form><span style="font-weight:bold">Odometer:</span> <span id="odometer"></span></form>
+                                <form><span style="font-weight:bold">Time of construction:</span> <span id="construction_year"></span></form>
+                                <form><span style="font-weight:bold">Garage built in:</span> <span id="build_garage"></span></form>
+
+                            </div>
+                            
+                        </li>
+
+                        <p>   </p>
+
+                        <li>
+                            <button id="showOwnHistory" class="button_2" onclick="showCarHistory()">
+                                Show history of car
+                            </button>
+                            <input type="address" id="givenAddress06"class="address_1" placeholder="Enter address here...">
+
+                            <p></p>
+
+                            <table  id="car_history">
+                                          
+                                <tr>
+                                  <th width="20%">Date</th>
+                                  <th width="30%">Garage</th> 
+                                  <th width="50%">Entry</th>
+                                  
+                                </tr>
+
+                                
+                                
+                                
+                            </table>
+                        </li>
+
+                        <li>
+                            <button id="showGarageData" class="button_2" onclick="showDataOfGarage()">
+                                Show data of Garage
+                            </button>
+                            <input type="address" id="givenAddress12"class="address_1" placeholder="Enter address here...">
+
+                            <div id="garage_data_form">
+                                <p></p>
+                                <form><span style="font-weight:bold">Admin:</span> <span id="garage_admin"></span></form>
+                                <form><span style="font-weight:bold">Name:</span> <span id="garage_name"></span></form>
+                                <form><span style="font-weight:bold">Year of construction:</span> <span id="garage_year"></span></form>
+                                <form><span style="font-weight:bold">Location:</span> <span id="garage_location"></span></form>
+                             </div>
+                            
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li>
+                        <h3>
+                           Motor Mechanics
+                        </h3>
+                        
+                        <p>The following section is for motor mechanics.</p>
+
+                        <ul id="inner_services">
+                                <li>
+                                        <button id="showCarData" class="button_2" onclick="showDataOfCarGarage()">
+                                            Show data of car
+                                        </button>
+                                        <input type="address" id="givenAddress07"class="address_1" placeholder="Enter address here...">
+            
+                                        <div id="car_data_form_car">
+                                            <p></p>
+                                            <form><span style="font-weight:bold">Model:</span> <span id="model_name_car"></span></form>
+                                            <form><span style="font-weight:bold">License Plate:</span> <span id="license_plate_car"></span></form>
+                                            <form><span style="font-weight:bold">Owner:</span> <span id="car_owner_car"></span></form>
+                                            <form><span style="font-weight:bold">Odometer:</span> <span id="odometer_car"></span></form>
+                                            <form><span style="font-weight:bold">Time of construction:</span> <span id="construction_year_car"></span></form>
+                                            <form><span style="font-weight:bold">Garage built in:</span> <span id="build_garage_car"></span></form>
+            
+                                        </div>
+                                        
+                                </li>
+
+
+
+                            <li>
+                                <button id="showHistory" class="button_2" onclick="showCarHistoryMechanic()">
+                                    Show Car History of given address.
+                                </button>
+                                <input type="address" id="givenAddress01" class="address_1" placeholder="Enter address here...">
+                                <p> </p>
+
+                            <table  id="car_history_mechanic">
+                                          
+                                <tr>
+                                  <th width="20%">Date</th>
+                                  <th width="30%">Garage</th> 
+                                  <th width="50%">Entry</th>
+                                  
+                                </tr>
+
+                                
+                                
+                                
+                            </table>
+
+                            </li>
+                        
+                            <p>   </p>
+                        
+                        
+                            <li>
+                                <button id="addHistory" class="button_2" onclick="addHistory()">
+                                        Add history entry to given address.
+                                     </button>
+                                     <input type="address" id="givenAddress02"class="address_1" placeholder="Enter address here...">
+                                     <p>  </p>
+                                     <p> Enter entry in following text area:</p>
+                                     <textarea type="text" cols="50" rows="8" id="givenEntry" class="entry" ></textarea>
+                                     </textarea>
+                            </li>
+
+
+
+                            <li>
+                                    <button id="changeCarOwner" class="button_2" onclick="changeCarOwner()">
+                                        Change Car Owner
+                                    </button>
+                                    <input type="address" id="givenAddress08" class="address_1" placeholder="Enter address here...">
+                                    <input type="address" id="given_new_car_owner" class="address_1" placeholder="Enter new owner here...">
+                                
+                            </li>
+
+                            <li>
+                                    <button id="changeLicensePlate" class="button_2" onclick="changeCarPlate()">
+                                        Change Car License Plate
+                                    </button>
+                                    <input type="address" id="givenAddress09" class="address_1" placeholder="Enter address here...">
+                                    <input type="address" id="given_new_license_plate" class="address_1" placeholder="Enter new License Plate here...">
+                                
+                            </li>
+
+                            <li>
+                                    <button id="updateOdometer" class="button_2" onclick="updateOdometerFunction()">
+                                        Update Odometer
+                                    </button>
+                                    <input type="address" id="givenAddress10" class="address_1" placeholder="Enter address here...">
+                                    <input type="address" id="new_odometer" class="address_1" placeholder="Enter new Odometer value here...">
+                                
+                            </li>
+
+                        </ul>
+
+                </li>
+
+                <li>
+                        <h3>
+                           Administrators
+                        </h3>
+
+                        <p>The following section is for creating new cars/garages and for managing the administrator rights.</p>
+                       
+                        <ul id="inner_services">
+                            <li>
+                                <button id="createCar" class="button_2" onclick="createNewCar()">
+                                    Create new car for given address.
+                                </button><p></p>
+                                <input type="address" id="givenAddress03" class="address_1" placeholder="Enter address here...">
+                                
+                                <input  id="givenName01" class="name_1" placeholder="Enter model name here...">
+                                <input  id="givenLicensePlate01" class="name_1" placeholder="Enter license plate here...">
+                                <input  id="givenOwner01" class="name_1" placeholder="Enter owner name here...">
+ 
+                            </li>
+                            <p>   </p>
+
+                            <li>
+                                    <button id="registerCar" class="button_2"  onclick="registerCar()">
+                                        Register car for given address.
+                                    </button><p></p>
+                                    <input type="address" id="givenAddress11" class="address_1" placeholder="Enter address here...">
+                                    
+                                    <input  id="givenName02" class="name_1" placeholder="Enter model name here...">
+                                    <input  id="givenLicensePlate02" class="name_1" placeholder="Enter license plate here...">
+
+                                <input  id="givenOwner02" class="name_1" placeholder="Enter owner name here...">
+                                <input  id="givenOdometer02" class="name_1" placeholder="Enter Odometer value here...">
+                                <input  id="givenYear02" class="name_1" placeholder="Enter build year here...">
+                                </li>
+                                <p>   </p>
+                            <li>
+                                <button id="createGarage" class="button_2" onclick="createNewGarage()">
+                                            Create new garage for given address.
+                                </button><p></p>
+                                <input  id="givenAddress04" class="address_1" placeholder="Enter address here...">
+                                         
+                                <input  id="givenName03" class="name_1" placeholder="Enter garage name here...">
+                                <input  id="givenLocationGarage" class="name_1" placeholder="Enter garage location here...">
+                                <input  id="givenYearGarage" class="name_1" placeholder="Enter garage construction year here...">
+                                <input  id="givenAdminGarage" class="name_1" placeholder="Is garage admin? (y/n)">
+             
+                            </li>
+                            
+                            <p>   </p>
+                            
+                            <li>
+                                <button id="giveAdmRights" class="button_2" onclick="GiveAdminRights()">
+                                    Give admin rights to given address.
+                                </button>
+                                <input type="address" id="givenAddress14" class="address_1" placeholder="Enter address here...">
+                        
+                            </li>
+                            
+                            <p>  </p>
+
+                            <li>
+                                <button id="takeAdmRights" class="button_2" onclick="takeAdminRights()">
+                                    Take admin rights from given address.
+                                </button>
+                                <input type="address" id="givenAddress13" class="address_1" placeholder="Enter address here...">
+                        
+                            </li>
+                        </ul>
+
+                </li>
+    
+            </ul>
+           </article>
+
+        </div>
+
+
+    </section>
+
+    <footer>
+
+        <p>
+            TrustCar, Copyright &copy; 2018
+        </p>
+    </footer>
+
+
+
+
+
+    <div class="form-popup" id="myForm">
+        <form class="form-container">
+          <h1>Login</h1>
+      
+          <label for="email"><b>Wallet address</b></label>
+          <input type="text" placeholder="Enter address" id="login_addr">
+      
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" id="login_pwd">
+
+          <button  type='button' class="btn" id="login_button" onclick="login_into_Wallet()">Login</button>
+          <button  class="btn cancel" onclick="closeForm()">Close</button>
+
+          
+        </form>
+    </div>
+
+
+
+
+    <script>
+        var trustcar;
+        var getCarDataEvent;
+        var getGarageEvent;
+        var showHistoryEntryEvent;
+
+
+        // ######## establishing the connection ##########
+        var Web3 = require('web3');
+        
+        var log_adr;
+        var log_pwd; 
+
+        var function_to_call;
+
+        
+
+        window.addEventListener('load', function() 
+        {
+            if (typeof web3 !== 'undefined') 
+            {
+              console.log('web3 is enabled')
+              if (web3.currentProvider.isMetaMask === true) 
+              {
+                console.log('MetaMask is active')
+                web3 = new Web3(web3.currentProvider);
+              } 
+              else 
+              {
+                console.log('MetaMask is not available')
+                web3 = new Web3(web3.currentProvider);
+              }
+            } 
+            else 
+            {
+              console.log('web3 is not found')
+              web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
+              var x = document.getElementById("install_meta");
+              x.style.display = "none";
+            }
+
+            var tc = web3.eth.contract([ { "constant": false, "inputs": [ { "name": "_adr", "type": "address" } ], "name": "seeGarage", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [ { "name": "_adr", "type": "address" }, { "name": "_newowner", "type": "string" } ], "name": "changeOwner", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [ { "name": "_adr", "type": "address" }, { "name": "_odo", "type": "uint256" } ], "name": "updateOdometer", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [ { "name": "_adr", "type": "address" }, { "name": "_name", "type": "string" }, { "name": "_plate", "type": "string" }, { "name": "_owner", "type": "string" } ], "name": "createNewCar", "outputs": [ { "name": "success", "type": "bool" } ], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [ { "name": "_adr", "type": "address" }, { "name": "_adm", "type": "bool" }, { "name": "_name", "type": "string" }, { "name": "_place", "type": "string" }, { "name": "_year", "type": "uint256" } ], "name": "createNewGarage", "outputs": [ { "name": "success", "type": "bool" } ], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [ { "name": "_adr", "type": "address" }, { "name": "_plate", "type": "string" } ], "name": "changePlate", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [ { "name": "_car", "type": "address" }, { "name": "_content", "type": "string" } ], "name": "sendHistory", "outputs": [ { "name": "success", "type": "bool" } ], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [ { "name": "_adr", "type": "address" } ], "name": "getHistory", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [ { "name": "_adr", "type": "address" } ], "name": "seeCarData", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [ { "name": "_adr", "type": "address" }, { "name": "_name", "type": "string" }, { "name": "_plate", "type": "string" }, { "name": "_owner", "type": "string" }, { "name": "_odometer", "type": "uint256" }, { "name": "_year", "type": "uint256" } ], "name": "registerCar", "outputs": [ { "name": "success", "type": "bool" } ], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [ { "name": "_adr", "type": "address" } ], "name": "changeGarageToNonAdmin", "outputs": [ { "name": "success", "type": "bool" } ], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [ { "name": "", "type": "address" } ], "name": "garage_accounts", "outputs": [ { "name": "addr", "type": "address", "value": "0x0000000000000000000000000000000000000000" }, { "name": "adm", "type": "bool", "value": false }, { "name": "name", "type": "string", "value": "" }, { "name": "yearOfConstruction", "type": "uint256", "value": "0" }, { "name": "place", "type": "string", "value": "" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "", "type": "address" } ], "name": "car_accounts", "outputs": [ { "name": "addr", "type": "address", "value": "0x0000000000000000000000000000000000000000" }, { "name": "name", "type": "string", "value": "" }, { "name": "yearOfConstruction", "type": "uint256", "value": "0" }, { "name": "license_plate", "type": "string", "value": "" }, { "name": "owner", "type": "string", "value": "" }, { "name": "odometer", "type": "uint256", "value": "0" }, { "name": "place", "type": "address", "value": "0x0000000000000000000000000000000000000000" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [ { "name": "_adr", "type": "address" } ], "name": "changeGarageToAdmin", "outputs": [ { "name": "success", "type": "bool" } ], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "inputs": [], "payable": false, "stateMutability": "nonpayable", "type": "constructor" }, { "anonymous": false, "inputs": [ { "indexed": false, "name": "_name", "type": "string" }, { "indexed": false, "name": "_yearOfConstruction", "type": "uint256" }, { "indexed": false, "name": "_license_plate", "type": "string" }, { "indexed": false, "name": "_owner", "type": "string" }, { "indexed": false, "name": "_odometer", "type": "uint256" }, { "indexed": false, "name": "_place", "type": "address" } ], "name": "getCarData", "type": "event" }, { "anonymous": false, "inputs": [ { "indexed": false, "name": "_adm", "type": "bool" }, { "indexed": false, "name": "_name", "type": "string" }, { "indexed": false, "name": "_yearOfConstruction", "type": "uint256" }, { "indexed": false, "name": "_place", "type": "string" } ], "name": "getGarage", "type": "event" }, { "anonymous": false, "inputs": [ { "indexed": false, "name": "fail", "type": "bool" } ], "name": "updateFailed", "type": "event" }, { "anonymous": false, "inputs": [ { "indexed": false, "name": "_date", "type": "uint256" }, { "indexed": false, "name": "_adr", "type": "address" }, { "indexed": false, "name": "_entry", "type": "string" } ], "name": "showHistoryEntry", "type": "event" } ]);
+       
+       
+       
+               
+            trustcar = tc.at("0xF7e95D7b821826BBcf57A0EE821A6E0C969D2548");
+            console.log(trustcar.garage_accounts.call('0x1ED260dBd1374FAD11a903023d7c37C0A7A71876'));
+            console.log("Test01");
+            
+            var log_adr="";
+            var log_pwd=""; 
+
+
+
+            // ### Event List ###
+            getCarDataEvent = trustcar.getCarData();
+            getGarageEvent = trustcar.getGarage();
+            showHistoryEntryEvent = trustcar.showHistoryEntry();
+
+
+
+
+        })
+
+        function openForm() {
+            document.getElementById("myForm").style.display = "block";
+
+          }
+          
+          function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+          }
+        
+
+        function sleep(delay) {
+            var start = new Date().getTime();
+            while (new Date().getTime() < start + delay);
+        }
+
+
+        // ############## Make the website a bit more fancy #################
+        document.getElementById("car_data_form").style.display = "none";
+        document.getElementById("car_history").style.display = "none";
+        document.getElementById("garage_data_form").style.display = "none";
+        document.getElementById("car_data_form_car").style.display = "none";
+        document.getElementById("car_history_mechanic").style.display = "none";
+       
+
+
+
+        // ##### Functions for Buttons ##########
+
+        function showCarData(){    
+                  console.log("Button ShowCarData pressed");
+                                    
+                                    openForm();
+                                    function_to_call = "_showCarData";
+               
+
+        }
+
+        function showCarHistory(){    
+            console.log("Button ShowCarHistory pressed");
+                              
+                              openForm();
+                              function_to_call = "_showCarHistory";
+         
+
+        }
+
+        function showDataOfGarage(){    
+            console.log("Button ShowGarageData pressed");
+                              
+                              openForm();
+                              function_to_call = "_showDataOfGarage";
+         
+
+        }
+        
+
+
+        function showDataOfCarGarage(){    
+            console.log("Button ShowCarData_Garage pressed");
+                              
+                              openForm();
+                              function_to_call = "_showCarDataMechanic";
+         
+
+        }
+
+        
+
+        function showCarHistoryMechanic(){    
+            console.log("Button ShowCarHistoryMechanic pressed");
+                              
+                              openForm();
+                              function_to_call = "_showCarHistoryMechanic";
+         
+
+        }
+
+
+        function addHistory(){
+            console.log("Button AddHistory pressed");
+                              
+                              openForm();
+                              function_to_call = "_addHistory";
+         
+
+
+        }
+        
+        function changeCarOwner(){
+            console.log("Button ChangeCarOwner pressed");
+            openForm();
+            function_to_call = "_changeCarOwner";
+        }
+
+        function changeCarPlate(){
+            console.log("Button ChangeCarPlate pressed");
+            openForm();
+            function_to_call = "_changeCarPlate";
+        }
+        
+
+        function updateOdometerFunction(){
+            console.log("Button updateOdometer pressed");
+            openForm();
+            function_to_call = "_updateOdometer";
+        }
+
+        
+        function createNewCar(){
+            console.log("Button createNewCar pressed");
+            openForm();
+            function_to_call = "_createCar";
+        }
+        
+
+        function registerCar(){
+            console.log("Button createNewCar pressed");
+            openForm();
+            function_to_call = "_registerCar";
+        }
+
+        function createNewGarage(){
+            console.log("Button createNewGarage pressed");
+            openForm();
+            function_to_call = "_createNewGarage";
+        }
+
+
+        
+
+
+        function takeAdminRights(){
+            console.log("Button takeAdminRights pressed");
+            openForm();
+            function_to_call = "_takeAdminRights";
+        }
+
+        
+        function GiveAdminRights(){
+            console.log("Button GiveAdminRights pressed");
+            openForm();
+            function_to_call = "_GiveAdminRights";
+        }
+
+
+
+
+        // ########### Function to execut ewhen login button is pressed  ############
+
+            function login_into_Wallet(){
+                console.log("Login: ",document.getElementById("login_addr").value);
+                console.log("Password: ", document.getElementById("login_pwd").value);
+                 
+                web3.personal.unlockAccount(document.getElementById("login_addr").value.toString(),document.getElementById("login_pwd").value.toString());                           //TODO Error Handling
+                
+                //Call different functions
+
+                // Show Car data, called by Owner
+                if(function_to_call === "_showCarData"){
+                    document.getElementById("car_data_form").style.display = "block";
+                    var addr = document.getElementById("givenAddress05").value;
+                    console.log("Given Address: ",document.getElementById("givenAddress05").value);
+                    console.log("Function to call before watch  ",function_to_call);
+                     trustcar.seeCarData(document.getElementById("givenAddress05").value,{from:document.getElementById("login_addr").value.toString()});
+
+
+                     getCarDataEvent.watch(function(error,result){
+                        console.log("Function to call before if error  ",function_to_call);
+                    if(!error){
+                        console.log("Function to call after if error  ",function_to_call);
+                        console.log("Event getCarData fired");
+                        document.getElementById("model_name").innerHTML = result.args._name;
+                        console.log("Car name: ",result.args._name );
+                        document.getElementById("license_plate").innerHTML = result.args._license_plate;
+                        document.getElementById("construction_year").innerHTML =new Date( result.args._yearOfConstruction * 1000);
+                        document.getElementById("odometer").innerHTML = result.args._odometer;
+                        document.getElementById("build_garage").innerHTML = result.args._place;
+                        document.getElementById("car_owner").innerHTML = result.args._owner;
+                        
+                                             
+                                                //event getCarData( string _name, uint _yearOfConstruction, string _license_plate, string _owner, uint _odometer, address _place);
+                                            
+
+                    }
+                    
+                    else
+                    {
+                        console.log("Error!");
+                    }
+                   
+
+
+                    });
+                    function_to_call="";   
+                }
+
+                // Show Car history, called by Owner
+                else if(function_to_call === "_showCarHistory"){
+                    document.getElementById("car_history").style.display = "block";
+                    var addr = document.getElementById("givenAddress06").value;
+                    console.log("Given Address: ",document.getElementById("givenAddress06").value);
+                    console.log("function_to_call: ",function_to_call);
+                     trustcar.getHistory(document.getElementById("givenAddress06").value,{from:document.getElementById("login_addr").value.toString()});
+                     showHistoryEntryEvent.watch(function(error,result){
+                    
+                    if(!error ){
+                        console.log("Event showHistoryEntry fired");
+                        var history_table = document.getElementById("car_history");
+                        var row1 = history_table.insertRow(1);
+                        var cell11 = row1.insertCell(0);
+                        var cell12 = row1.insertCell(1);
+                        var cell13 = row1.insertCell(2);
+                        cell11.innerHTML = new Date(result.args._date *1000);
+                        cell12.innerHTML = result.args._adr;
+                        cell13.innerHTML = result.args._entry;
+
+                    }
+
+                    else
+                    {
+                        console.log("Error!");
+                    }
+
+
+                    });
+                    console.log("After watch function!! ")
+                    function_to_call=""; 
+
+
+                }
+                
+
+
+                
+                // Show garage data, called by Owner
+                else if(function_to_call === "_showDataOfGarage"){
+                    document.getElementById("garage_data_form").style.display = "block";
+                    var addr = document.getElementById("givenAddress12").value;
+                    console.log("Given Address: ",document.getElementById("givenAddress12").value);
+                    console.log("function_to_call: ",function_to_call);
+                     trustcar.seeGarage(document.getElementById("givenAddress12").value,{from:document.getElementById("login_addr").value.toString()});
+                     getGarageEvent.watch(function(error,result){
+                    
+                    if(!error){
+                        console.log("Event getGarageData fired");
+                        document.getElementById("garage_admin").innerHTML = result.args._adm;
+                        document.getElementById("garage_name").innerHTML = result.args._name;
+                        document.getElementById("garage_year").innerHTML = result.args._yearOfConstruction;
+                        document.getElementById("garage_location").innerHTML = result.args._place;
+            
+                    }
+                    else
+                    {
+                        console.log("Error!");
+                    }
+
+
+                    });
+                    console.log("After watch function!! ")
+                    function_to_call=""; 
+
+
+                }
+
+
+                // Show Car data, called by mechanic
+                if(function_to_call === "_showCarDataMechanic"){
+                    document.getElementById("car_data_form_car").style.display = "block";
+                    var addr = document.getElementById("givenAddress07").value;
+                    console.log("Given Address: ",document.getElementById("givenAddress07").value);
+
+                     trustcar.seeCarData(document.getElementById("givenAddress07").value,{from:document.getElementById("login_addr").value.toString()});
+                     getCarDataEvent.watch(function(error,result){
+                    
+                    if(!error ){
+                        console.log("Event getCarData fired");
+                        document.getElementById("model_name_car").innerHTML = result.args._name;
+                        document.getElementById("license_plate_car").innerHTML = result.args._license_plate;
+                        document.getElementById("construction_year_car").innerHTML = result.args._yearOfConstruction;
+                        document.getElementById("odometer_car").innerHTML = result.args._odometer;
+                        document.getElementById("build_garage_car").innerHTML = result.args._place;
+                        document.getElementById("car_owner_car").innerHTML = result.args._owner;
+                                            
+
+                    }
+
+                    else
+                    {
+                        console.log("Error!");
+                    }
+
+
+                    });
+                    function_to_call="";   
+                }
+
+                // Show Car history, called by Mechanic
+                else if(function_to_call === "_showCarHistoryMechanic"){
+                    document.getElementById("car_history_mechanic").style.display = "block";
+                    var addr = document.getElementById("givenAddress01").value;
+                    console.log("Given Address: ",document.getElementById("givenAddress01").value);
+                    console.log("function_to_call: ",function_to_call);
+                     trustcar.getHistory(document.getElementById("givenAddress01").value,{from:document.getElementById("login_addr").value.toString()});
+                     showHistoryEntryEvent.watch(function(error,result){
+                    
+                    if(!error){
+                        console.log("Event showHistoryEntry fired");
+                        var history_table = document.getElementById("car_history_mechanic");
+                        var row1 = history_table.insertRow(1);
+                        var cell11 = row1.insertCell(0);
+                        var cell12 = row1.insertCell(1);
+                        var cell13 = row1.insertCell(2);
+                        cell11.innerHTML = result.args._date;
+                        cell12.innerHTML = result.args._adr;
+                        cell13.innerHTML = result.args._entry;
+
+                    }
+
+                    else
+                    {
+                        console.log("Error!");
+                    }
+
+
+                    });
+
+                    function_to_call=""; 
+
+
+                }
+                
+                else if(function_to_call === "_addHistory"){
+                    var addr = document.getElementById("givenAddress02").value;
+                    console.log("Given Address: ",document.getElementById("givenAddress02").value);
+                    console.log("function_to_call: ",function_to_call);
+
+                    console.log("Given Entry: ",document.getElementById("givenEntry").value.toString());
+                    console.log("Sender addr: ",document.getElementById("login_addr").value.toString());
+                    console.log("Given address: ",document.getElementById("givenAddress02").value.toString());
+                     trustcar.sendHistory(document.getElementById("givenAddress02").value, document.getElementById("givenEntry").value.toString(),{from:document.getElementById("login_addr").value.toString(), gas:500000});
+                     
+
+
+                    function_to_call=""; 
+
+
+                }
+                else if(function_to_call === "_changeCarOwner"){
+                    var addr = document.getElementById("givenAddress08").value;
+                    console.log("Given Address: ",document.getElementById("givenAddress08").value);
+                    console.log("function_to_call: ",function_to_call);
+
+                    console.log("Given Entry: ",document.getElementById("given_new_car_owner").value.toString());
+                    console.log("Sender addr: ",document.getElementById("login_addr").value.toString());
+                     trustcar.changeOwner(document.getElementById("givenAddress08").value, document.getElementById("given_new_car_owner").value.toString(),{from:document.getElementById("login_addr").value.toString()});
+                     
+                     
+
+                    function_to_call=""; 
+
+
+                }
+
+                else if(function_to_call === "_changeCarPlate"){
+                    var addr = document.getElementById("givenAddress09").value;
+                    console.log("Given Address: ",document.getElementById("givenAddress09").value);
+                    console.log("function_to_call: ",function_to_call);
+
+                    console.log("Given Entry: ",document.getElementById("given_new_license_plate").value.toString());
+                    console.log("Sender addr: ",document.getElementById("login_addr").value.toString());
+                     trustcar.changePlate(document.getElementById("givenAddress09").value, document.getElementById("given_new_license_plate").value.toString(),{from:document.getElementById("login_addr").value.toString()});
+                     
+                     
+
+                    function_to_call=""; 
+
+
+                }
+
+                else if(function_to_call === "_updateOdometer"){
+                    var addr = document.getElementById("givenAddress10").value;
+                    console.log("Given Address: ",document.getElementById("givenAddress10").value);
+                    console.log("function_to_call: ",function_to_call);
+
+                    console.log("Given Entry: ",document.getElementById("new_odometer").value.toString());
+                    console.log("Sender addr: ",document.getElementById("login_addr").value.toString());
+                     trustcar.updateOdometer(document.getElementById("givenAddress10").value, document.getElementById("new_odometer").value.toString(),{from:document.getElementById("login_addr").value.toString()});
+                     
+                     
+
+                    function_to_call=""; 
+
+                }
+
+                else if(function_to_call === "_createCar"){
+                    var addr = document.getElementById("givenAddress03").value;
+                    console.log("Given Address: ",document.getElementById("givenAddress03").value);
+                    console.log("function_to_call: ",function_to_call);
+
+                    console.log("Given Name: ",document.getElementById("givenName01").value.toString());
+                    console.log("Sender addr: ",document.getElementById("login_addr").value.toString());
+                     trustcar.createNewCar(document.getElementById("givenAddress03").value, document.getElementById("givenName01").value.toString(),document.getElementById("givenLicensePlate01").value.toString(),document.getElementById("givenOwner01").value.toString(),{from:document.getElementById("login_addr").value.toString(), gas:500000});
+                     
+                     
+
+                    function_to_call=""; 
+
+                }
+
+                else if(function_to_call === "_registerCar"){
+                    var addr = document.getElementById("givenAddress11").value;
+                    console.log("Given Address: ",document.getElementById("givenAddress11").value);
+                    console.log("function_to_call: ",function_to_call);
+
+                    console.log("Given Name: ",document.getElementById("givenName02").value.toString());
+                    console.log("Sender addr: ",document.getElementById("login_addr").value.toString());
+                     trustcar.registerCar(document.getElementById("givenAddress11").value, document.getElementById("givenName02").value.toString(),document.getElementById("givenLicensePlate02").value.toString(),document.getElementById("givenOwner02").value.toString(),document.getElementById("givenOdometer02").value,document.getElementById("givenYear02").value,{from:document.getElementById("login_addr").value.toString(), gas:500000});
+                     
+                     
+
+                    function_to_call=""; 
+
+                }
+
+
+
+
+                else if(function_to_call === "_takeAdminRights"){
+                    var addr = document.getElementById("givenAddress13").value;
+                    console.log("Given Address: ",document.getElementById("givenAddress13").value);
+                    console.log("function_to_call: ",function_to_call);
+
+                    console.log("Sender addr: ",document.getElementById("login_addr").value.toString());
+                     trustcar.changeGarageToNonAdmin(document.getElementById("givenAddress13").value, {from:document.getElementById("login_addr").value.toString()});
+                     
+                     
+
+                    function_to_call=""; 
+
+                }
+
+
+                else if(function_to_call === "_GiveAdminRights"){
+                    var addr = document.getElementById("givenAddress14").value;
+                    console.log("Given Address: ",document.getElementById("givenAddress14").value);
+                    console.log("function_to_call: ",function_to_call);
+
+                    console.log("Sender addr: ",document.getElementById("login_addr").value.toString());
+                     trustcar.changeGarageToAdmin(document.getElementById("givenAddress14").value, {from:document.getElementById("login_addr").value.toString()});
+                     
+                     
+
+                    function_to_call=""; 
+
+                }
+
+
+                else if(function_to_call === "_createNewGarage"){
+                    var addr = document.getElementById("givenAddress04").value;
+                    console.log("Given Address: ",document.getElementById("givenAddress04").value);
+                    console.log("function_to_call: ",function_to_call);
+
+                    console.log("Sender addr: ",document.getElementById("login_addr").value.toString());
+                    var adm;
+                    if(document.getElementById("givenAdminGarage").value === "y"){
+                        adm= true;
+                    }
+                    else{
+                        adm=false;
+                    }
+                     trustcar.createNewGarage( document.getElementById("givenAddress04").value,adm,document.getElementById("givenName03").value,document.getElementById("givenLocationGarage").value,document.getElementById("givenYearGarage").value,{from:document.getElementById("login_addr").value.toString(), gas:500000});
+                     
+                     
+
+                    function_to_call=""; 
+
+                }
+                
+
+
+
+
+
+                closeForm();
+
+
+
+                
+
+            }
+
+        
+
+            
+              
+
+
+
+
+
+
+
+      
+        // ################ Only for Debugging some examples ####################
+
+        // #### Owner's page ####
+        
+        // History Table
+        //var history_table = document.getElementById("car_history");
+        
+        //history_table.style.display="none";
+
+        //var row1 = history_table.insertRow(1);
+       // var cell11 = row1.insertCell(0);
+       // var cell12 = row1.insertCell(1);
+       // var cell13 = row1.insertCell(2);
+       // cell11.innerHTML = "2018/11/21";
+       // cell12.innerHTML = "Duis quis massa 0xbfccfb06949a987de138688db7a6b0bbf6934c5e";
+       // cell13.innerHTML = "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce sagittis urna pretium sem vehicula vestibulum. Fusce accumsan porttitor ex, at ultrices dolor. Quisque tristique purus id orci tempor, eget efficitur sapien blandit.";
+
+       // var row2 = history_table.insertRow(2);
+       // var cell21 = row2.insertCell(0);
+       // var cell22 = row2.insertCell(1);
+       // var cell23 = row2.insertCell(2);
+       // cell21.innerHTML = "2018/07/10";
+       // cell22.innerHTML = "Cras rhoncus 0x08aab4a0bf326b5f882482f5a339f715437a107b";
+       // cell23.innerHTML = "Donec a lectus et purus volutpat maximus sodales sed dolor. Proin aliquam, sem sit amet viverra fermentum, est diam molestie mauris, sit amet tempus arcu ante et enim. ";
+
+       // var row3 = history_table.insertRow(3);
+       // var cell31 = row3.insertCell(0);
+       // var cell32 = row3.insertCell(1);
+        //var cell33 = row3.insertCell(2);
+       // cell31.innerHTML = "2017/03/24";
+        //cell32.innerHTML = "Cras rhoncus 0x08aab4a0bf326b5f882482f5a339f715437a107b";
+       // cell33.innerHTML = "Aenean posuere ipsum vel arcu hendrerit sodales. Ut non viverra quam. Vestibulum at purus id lorem porttitor laoreet blandit sed libero. Mauris blandit, sapien vitae convallis sollicitudin, nunc augue accumsan purus, nec tristique arcu nisi ac felis. Pellentesque laoreet sem eu ipsum efficitur euismod.";
+      
+        // Car Data
+        //var car_data = document.getElementById("car_data_form");
+       
+        //car_data.style.display="none";
+        
+        //document.getElementById("model_name").innerHTML = "Audi Q8 ‎3.0 L FSI twin-scroll turbo V6";
+       // document.getElementById("license_plate").innerHTML = "IN | TC2018";
+        //document.getElementById("construction_year").innerHTML = "2018";
+       // document.getElementById("odometer").innerHTML = "0000000543km";
+        //document.getElementById("build_garage").innerHTML = "0x08aab4a0bf326b5f882482f5a339f715437a107b";
+        //document.getElementById("car_owner").innerHTML = "Herbert Bauer";
+
+
+
+        // Garage Data in Car Owner part
+       // var garage_data = document.getElementById("garage_data_form");
+       
+        //garage_data.style.display="none";
+        
+       // document.getElementById("garage_admin").innerHTML = "True";
+       // document.getElementById("garage_name").innerHTML = "A.T.U. Munich";
+        //document.getElementById("garage_year").innerHTML = "2012";
+       // document.getElementById("garage_location").innerHTML = "Munich";
+
+
+
+
+        //#### Mechanics page ####
+
+        // Car History in Mechanics Part
+         // History Table
+        // var history_table_m = document.getElementById("car_history_mechanic");
+        
+         //history_table_m.style.display="none";
+ 
+        // var row1_m = history_table_m.insertRow(1);
+        // var cell11_m = row1_m.insertCell(0);
+        // var cell12_m = row1_m.insertCell(1);
+        // var cell13_m = row1_m.insertCell(2);
+       //  cell11_m.innerHTML = "2018/11/21";
+        // cell12_m.innerHTML = "Duis quis massa 0xbfccfb06949a987de138688db7a6b0bbf6934c5e";
+        // cell13_m.innerHTML = "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce sagittis urna pretium sem vehicula vestibulum. Fusce accumsan porttitor ex, at ultrices dolor. Quisque tristique purus id orci tempor, eget efficitur sapien blandit.";
+ 
+        // var row2_m = history_table_m.insertRow(2);
+        // var cell21_m = row2_m.insertCell(0);
+        // var cell22_m = row2_m.insertCell(1);
+        // var cell23_m = row2_m.insertCell(2);
+        // cell21_m.innerHTML = "2018/07/10";
+       //  cell22_m.innerHTML = "Cras rhoncus 0x08aab4a0bf326b5f882482f5a339f715437a107b";
+       //  cell23_m.innerHTML = "Donec a lectus et purus volutpat maximus sodales sed dolor. Proin aliquam, sem sit amet viverra fermentum, est diam molestie mauris, sit amet tempus arcu ante et enim. ";
+ 
+       //  var row3_m = history_table_m.insertRow(3);
+       //  var cell31_m = row3_m.insertCell(0);
+       //  var cell32_m = row3_m.insertCell(1);
+        // var cell33_m = row3_m.insertCell(2);
+        // cell31_m.innerHTML = "2017/03/24";
+        // cell32_m.innerHTML = "Cras rhoncus 0x08aab4a0bf326b5f882482f5a339f715437a107b";
+       //  cell33_m.innerHTML = "Aenean posuere ipsum vel arcu hendrerit sodales. Ut non viverra quam. Vestibulum at purus id lorem porttitor laoreet blandit sed libero. Mauris blandit, sapien vitae convallis sollicitudin, nunc augue accumsan purus, nec tristique arcu nisi ac felis. Pellentesque laoreet sem eu ipsum efficitur euismod.";
+       
+
+          // Car Data
+      //  var car_data_m = document.getElementById("car_data_form_car");
+       
+        //car_data_m.style.display="none";
+        
+       // document.getElementById("model_name_car").innerHTML = "Audi Q8 ‎3.0 L FSI twin-scroll turbo V6";
+      // document.getElementById("license_plate_car").innerHTML = "IN | TC2018";
+        //document.getElementById("construction_year_car").innerHTML = "2018";
+       // document.getElementById("odometer_car").innerHTML = "0000000543km";
+       // document.getElementById("build_garage_car").innerHTML = "0x08aab4a0bf326b5f882482f5a339f715437a107b";
+       // document.getElementById("car_owner_car").innerHTML = "Herbert Bauer";
+
+        
+
+
+
+
+    </script>
+
+
+
+    
+
+</body>
+</html>
+
+

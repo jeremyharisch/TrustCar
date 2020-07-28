@@ -1,0 +1,13 @@
+eth.accounts
+miner.start(3)
+miner.stop()
+miner.start(3)
+miner.stop()
+miner.start(3)
+miner.stop()
+miner.start()
+la
+miner.start()
+miner.stop()
+miner.start()
+miner.stop()

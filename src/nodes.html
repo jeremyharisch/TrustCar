@@ -1,0 +1,37 @@
+<input id="input"type="test">
+    <button id="button"> Set</button>
+    <pre id ="output">
+        
+    </pre>
+
+
+    <script>
+            
+            if (typeof web3 !== 'undefined') 
+            { 
+                web3 = new Web3(web3.currentProvider); 
+               
+            } 
+            else 
+            {
+                 // set the provider you want from  Web3.providers 
+                 web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545")); 
+                
+            }
+        web3.eth.defaultAccount = web3.eth.accounts[0];
+
+        var trustCarContract = web3.eth.contract();//put here byte code of smart contract!
+        var deploy = trustCarContract.at('0x...'); // put in here the adress of current adress of smart contract on chain
+            
+
+var button = document.getElementById('button');
+var input = document.getElementById('input');
+var output = document.getElementById('output');
+
+button.addEventListener('click',function(){
+    trustCarContract.//sm function // (input.value);
+    output.innerHTML = trustCarContract. //sm function 
+});
+
+
+    </script>

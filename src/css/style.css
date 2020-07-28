@@ -1,0 +1,336 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    line-height:1.5;
+    padding: 0;
+    margin: 0;
+    background-color: f4f4f4;
+
+}
+
+/*Global*/
+.container{
+    width:80%;
+    margin:auto;
+    overflow:hidden;
+
+}
+
+ul{
+    margin:0;
+    padding:0;
+}
+
+.button_1{
+    height:38px;
+    background: #770100;
+    border:none;
+    padding-left:20px;
+    padding-right: 20px;
+    color:#ffffff; 
+
+}
+
+.button_2{
+    height:38px;
+    width: 300px;
+    background: #770100;
+    border:none;
+    padding-left:20px;
+    padding-right: 20px;
+    color:#ffffff; 
+
+    
+}
+
+.address_1{
+    height:30px;
+    width: 375px;
+    border: #6c6c6c 1px solid;
+
+}
+
+.entry{
+    width:80%;
+    margin:auto;
+    overflow:hidden;
+
+}
+
+.name_1{
+    height:30px;
+    width: 375px;
+    border: #6c6c6c 1px solid;
+}
+
+.dark{
+    padding:15px;
+    background:#343434;
+    color:#ffffff;
+}
+
+
+/*Header*/
+
+header{
+    background: #343434;
+    color: #ffffff;
+    padding-top:17px;
+    min-height: 60px;
+    border-bottom: #770100 3px solid;
+}
+
+header a{
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+
+}
+
+
+header li{
+    float:left;
+    display:inline;
+    padding: 0 20px 0 20px; /*top right bottom left*/
+
+}
+
+header #branding{
+    float:left;
+
+}
+header #branding h1{
+    margin:0;
+}
+header nav{
+    float:right;
+    margin-top:10px;
+
+}
+
+header .highlight, header .current a{
+    color:#770100;
+    font-weight:bold;
+}
+
+header a:hover{
+    color:#cccccc;
+    font-weight: bold;
+     
+}
+
+/* Showcase*/
+
+#showcase{
+    min-height: 400px;
+    background: url('../img/wallpaper2you_250474.jpg') no-repeat 0 -300px;
+    text-align:center;
+    color: #000000;
+
+}
+
+#showcase h1{
+
+margin-top:100px;
+font-size: 35px;
+margin-bottom: 10px;
+
+}
+
+#showcase p{
+font-size: 20px;
+
+}
+
+
+
+/* Boxes*/
+#boxes{
+    margin-top:20px;
+}
+
+#boxes .box{
+    float:left;
+    width:30%;
+    padding:10px;
+    text-align:center;
+}
+
+#boxes .box img{
+    width:90px;
+
+}
+
+/*Sidebar*/
+aside #sidebar{
+float:right;
+margin-top:10px;
+width:35%;
+
+}
+
+/*Main-col*/
+article #main-col{
+    float:left;
+    width:65%;
+}
+
+/*Services*/
+ul#services li{
+    list-style:none;
+    padding:20px;
+    border: #cccccc solid 1px;
+    margin-bottom:5px;
+    background:#e6e6e6;
+
+}
+
+ul#install_meta li{
+    list-style:none;
+    padding:20px;
+    border: #c41010 solid 1px;
+    margin-bottom:5px;
+    background:#d09b9b;
+    color: #904545;
+
+}
+
+
+
+ul#inner_services li{
+    list-style:none;
+    padding:20px;
+    border: #646464 solid 1px;
+    margin-bottom:5px;
+    background:#9a9a9a;
+
+}
+
+table{
+    table-layout: auto;
+    width: 95%; 
+    border-collapse: collapse;
+    border: 2px solid black;
+}
+
+th {
+    height: 50px;
+    border: 2px solid black;
+}
+
+
+table,  td {
+    border: 1px solid black;
+}
+
+
+
+/*Footer*/
+
+footer{
+    padding:20px;
+    margin-top:20px;
+    color:#ffffff;
+    background-color:#770100;
+    text-align:center;
+
+
+}
+
+
+/*Pop-Up*/
+{box-sizing: border-box;}
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+
+
+/* Media Queries */
+@media(max-width:768px){
+    header #branding,
+    header nav,
+    header nav li
+    {
+        float:none;
+        text-align:center;
+        width:100%;
+    }
+
+    header{
+        padding-bottom: 20px;
+        float:none;
+        text-align:center;
+    }
+
+    #showcase h1{
+        margin-top:40px;
+    }
+
+}
